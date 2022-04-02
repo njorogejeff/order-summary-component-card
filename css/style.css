@@ -6,7 +6,7 @@
     --bright-blue: hsl(245, 75%, 52%);
 
     /* Neutral Colors */
-    --very-pale-blue: hsl(224, 23%, 55%);
+    --very-pale-blue: hsl(225, 100%, 98%);
     --desaturated-blue: hsl(224, 23%, 55%);
     --dark-blue: hsl(223, 47%, 23%);
     --white: hsl(0, 0%, 100%);
@@ -22,7 +22,7 @@
 body {
     width: 100%;
     background: var(--pale-blue) url('/images/pattern-background-desktop.svg') no-repeat left top;
-    background-size: 100% 25em;
+    background-size: 100%;
     font-family: 'Red Hat Display', sans-serif;
     max-width: 90%;
     margin: 0 auto;
@@ -30,8 +30,8 @@ body {
 p {
     font-size: 16px;
 }
-h2, p {
-    text-align: center;
+h1, h2, h3, h4, h5, h6, p {
+    line-height: 1.7rem;
 }
 img {
     display: block;
@@ -61,24 +61,54 @@ main {
 }
 .card-description,
 .card-subscription-plan {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 .card-description .description-heading {
     margin-bottom: 1rem;
+}
+.card-description .description-heading h2,
+.card-description .description-text p {
+    text-align: center;
+}
+.card-description .description-heading h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+.card-description .description-text p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--desaturated-blue);
 }
 .card-subscription-plan {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgb(180, 180, 180, 0.1);
+    background: var(--very-pale-blue);
     padding: 1rem;
-    border-radius: .5rem;
+    border-radius: .7rem;
 }
 .card-subscription-plan .subscription-plan {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+.card-subscription-plan .subscription-value h4 {
+    font-size: 1rem;
+    font-weight: 900;
+}
+.card-subscription-plan .subscription-value p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--desaturated-blue);
+}
+.card-subscription-plan .subscription-plan-select p {
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+.card-subscription-plan .subscription-plan-select a {
+    text-decoration: underline;
 }
 .card-buttons {
     display: flex;
@@ -89,14 +119,21 @@ main {
 /* Utility Classes */
 .btn {
     display: block;
+    font-size: .9rem;
+    font-weight: 700;
     border-radius: .5rem;
-    padding: .7rem 0;
+    padding: .9rem 0;
     border: none;
     cursor: pointer;
 }
 .primary-btn {
     background-color: var(--bright-blue);
     color: var(--white);
+    box-shadow: 0 .8rem 20px var(--pale-blue), 0 .8rem 20px var(--pale-blue);
+}
+.secondary-btn {
+    background-color: transparent;
+    color: var(--desaturated-blue);
 }
 
 /* Footer Section Styles */
@@ -113,4 +150,27 @@ footer {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 375px) {
+    h1, h2, h3, h4, h5, h6, p {
+        line-height: 1.5rem;
+    }
+    body {
+        width: 100%;
+        background: var(--pale-blue) url('/images/pattern-background-mobile.svg') no-repeat;
+        background-size: 100%;
+    }
+    .card-description .description-heading h2 {
+        font-size: 1.5rem;
+    }
+    .card-subscription-plan .subscription-value h4 {
+        font-size: .9rem;
+    }
+    .card-subscription-plan .subscription-value p {
+        font-size: .9rem;
+    }
+    .card-subscription-plan .subscription-plan-select p {
+        font-size: .8rem;
+    }
 }
