@@ -71,6 +71,7 @@ main {
     text-align: center;
 }
 .card-description .description-heading h2 {
+    color: var(--dark-blue);
     font-size: 1.7rem;
     font-weight: 900;
 }
@@ -94,6 +95,7 @@ main {
     width: 100%;
 }
 .card-subscription-plan .subscription-value h4 {
+    color: var(--dark-blue);
     font-size: 1rem;
     font-weight: 900;
 }
@@ -134,6 +136,17 @@ main {
 .secondary-btn {
     background-color: transparent;
     color: var(--desaturated-blue);
+}
+
+/* Active States */
+.card-subscription-plan .subscription-plan-select a:hover {
+    color: #766CF1;
+}
+.card-buttons .btn.primary-btn:hover {
+    background-color: #766CF1;
+}
+.card-buttons .btn.secondary-btn:hover {
+    color: var(--dark-blue);
 }
 
 /* Footer Section Styles */
